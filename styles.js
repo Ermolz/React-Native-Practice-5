@@ -76,7 +76,6 @@ export default StyleSheet.create({
     bottomNav: {
         flexDirection: 'row',
         justifyContent: 'space-around',
-        // position: 'absolute',
         marginTop: 16,
     },
     navButton: {

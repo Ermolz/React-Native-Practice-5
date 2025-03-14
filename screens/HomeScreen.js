@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { View, Text, TextInput, FlatList, TouchableOpacity, SafeAreaView } from 'react-native';
 import ProductCard from '../components/ProductCard';
 import { fetchProducts } from '../utils/api';
 import styles from '../styles';
-import {ScrollView} from "react-native-web";
 
-const HomeScreen = ({ navigation, favorites, setFavorites, cart, setCart }) => {
+import { AppContext } from '../context/AppContext';
+
+const HomeScreen = ({ navigation }) => {
+    const { favorites, setFavorites, cart, setCart } = useContext(AppContext);
     const [products, setProducts] = useState([]);
     const [nameFilter, setNameFilter] = useState('');
     const [priceFilter, setPriceFilter] = useState('');
